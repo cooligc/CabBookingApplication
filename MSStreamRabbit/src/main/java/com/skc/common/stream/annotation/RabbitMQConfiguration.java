@@ -59,8 +59,13 @@ public class RabbitMQConfiguration {
 	}
 
 	@Bean
-	MessageListenerAdapter listenerAdapter(MicroserviceMessageReceiver<Serializable> receiver) {
-		return new MessageListenerAdapter(receiver, "onMessageRecieve");
+	MessageListenerAdapter listenerAdapter() {
+		return new MessageListenerAdapter(reciever(), "onMessageRecieve");
+	}
+
+	@Bean
+	MicroserviceMessageReceiver<Serializable> reciever() {
+		return new MicroserviceMessageReceiver<Serializable>();
 	}
 
 }

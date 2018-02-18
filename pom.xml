@@ -16,6 +16,7 @@
 	</parent>
 
 	<modules>
+		<module>MSCommonUtils</module>
 		<module>MSStreamRabbit</module>
 		<module>MSCommonJPA</module>
 		<module>MSCommonException</module>
@@ -43,6 +44,11 @@
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>MSSecurityModule</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>MSCommonUtils</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>

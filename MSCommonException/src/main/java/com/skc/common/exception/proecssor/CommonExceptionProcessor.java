@@ -18,16 +18,19 @@ public class CommonExceptionProcessor {
 	
 	@ExceptionHandler(NotFoundException.class)
 	public ResponseException landNotFoundException(NotFoundException nfe){
+		nfe.printStackTrace();
 		return new ResponseException(nfe.getStatusCode(), nfe.getErrorMessage());
 	}
 	
 	@ExceptionHandler(RuntimeException.class)
 	public ResponseException landRuntimeException(RuntimeException re){
+		re.printStackTrace();
 		return new ResponseException("ERR500", re.getMessage());
 	}
 	
 	@ExceptionHandler(Exception.class)
 	public ResponseException landAllException(Exception e){
+		e.printStackTrace();
 		return new ResponseException("ERR000", e.getMessage());
 	}
 

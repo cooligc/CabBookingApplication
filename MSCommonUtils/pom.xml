@@ -6,18 +6,24 @@
 		<artifactId>CabBookingApplication</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>MSStreamRabbit</artifactId>
-	<name>Microservice Streaming module with RabbitMQ</name>
-	<description>	</description>
+	<artifactId>MSCommonUtils</artifactId>
+	<name>Utility for Microservice</name>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-amqp</artifactId>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
 		</dependency>
 		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>MSCommonUtils</artifactId>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.2</version>
 		</dependency>
 	</dependencies>
 </project>

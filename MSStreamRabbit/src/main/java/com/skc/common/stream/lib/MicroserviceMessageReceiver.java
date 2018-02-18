@@ -5,6 +5,8 @@ package com.skc.common.stream.lib;
 
 import java.io.Serializable;
 
+import com.skc.common.util.ObjectUtils;
+
 /**
  * @author sitakant
  *
@@ -14,9 +16,10 @@ public class MicroserviceMessageReceiver<T extends Serializable> implements Mess
 	private MessageDetail<T> messageDetails;
 	
 	@Override
-	public MessageDetail<T> onMessageRecieve(MessageDetail<T> md) {
-		this.messageDetails = md;
-		return md;
+	public MessageDetail<T> onMessageRecieve(String message) {
+		System.out.println("Recieved Message \n"+message+"\n\n");
+		this.messageDetails = ObjectUtils.convertToJava(message, MessageDetail.class);
+		return messageDetails;
 	}
 
 	@Override

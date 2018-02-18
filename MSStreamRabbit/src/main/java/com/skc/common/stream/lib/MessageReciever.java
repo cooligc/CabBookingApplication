@@ -10,6 +10,6 @@ import java.io.Serializable;
  *
  */
 public interface MessageReciever<T extends Serializable> {
-	MessageDetail<T> onMessageRecieve(MessageDetail<T> md);
+	MessageDetail<T> onMessageRecieve(String message);
 	Exception onException(Exception ex);
 }
